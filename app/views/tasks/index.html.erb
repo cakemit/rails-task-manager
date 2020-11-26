@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>My tasks</h1>
+  <% @tasks.each_with_index do |task, index| %>
+  <%# INI TASK %>
+    <div style="display:flex; align-items: center;">
+      <p style="margin: 0; padding: 5px; width: 20px; text-align: center;"><%= index + 1 %></p>
+      <% if task.completed? %>
+        <input style="margin: 0; padding: 5px; width: 20px;" type="checkbox" checked>
+      <% else %>
+        <input style="margin: 0; padding: 5px; width: 20px;" type="checkbox">
+      <% end %>
+      <%= link_to task.title, task_path(task), class:"task-list"%>
+    </div>
+  <%# END TASK %>
+  <% end %>
+</div>
+<%#   %>

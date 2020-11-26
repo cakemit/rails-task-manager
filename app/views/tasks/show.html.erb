@@ -1,0 +1,15 @@
+<h2>
+  <%= @task.title %>
+</h2>
+<p><%= @task.details %></p>
+
+<div style="display: flex; align-items: center">
+  <% if @task.completed? %>
+    <input style="margin: 0; padding: 5px; width: 20px;" type="checkbox" checked>
+  <% else %>
+    <input style="margin: 0; padding: 5px; width: 20px;" type="checkbox">
+  <% end %>
+  <p>This task is completed</p>
+</div>
+
+<%= link_to "All tasks", tasks_path %>
