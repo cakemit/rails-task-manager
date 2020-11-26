@@ -12,4 +12,11 @@
   <p>This task is completed</p>
 </div>
 
-<%= link_to "All tasks", tasks_path %>
+<%= link_to "Delete this task",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<p> </p>
+<%= link_to "Edit this task", task_edit_path(@task) %>
+<p> </p>
+<%= link_to "List all tasks", tasks_path %>
